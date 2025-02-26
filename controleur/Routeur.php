@@ -17,11 +17,13 @@ class Routeur
                 $models = "../models/".$modelsDoc.".php";
                 $views = "../views/".$viewsDoc.".php";
                 if(file_exists($models)){
+                    require_once ("../models/bd/Cntbd.php");
+                    $Cntbd = new Cntbd();
+                    $bd = $Cntbd->bd();
                     require_once ($models);
                 }
-                if(file_exists($controleur) AND file_exists($views)){
+                if(file_exists($controleur)){
                     require_once ($controleur);
-                    require_once ($views);
 
                 }else{
                     header ('Location: /Kephale_Dig/mariage');
