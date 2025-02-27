@@ -2,7 +2,7 @@
     <section class='BlocBac'>
         <form method="POST" enctype="multipart/form-data">
             <h1 class='eooez'>Ajouter api mariage</h1>
-
+            <h1 class='eoo'><?php if (isset($resuite)) {echo $resuite;} ?></h1>
             <h5>Jour</h5>
             <input class="form_input" type="number" placeholder="Jour" name="jour" 
             min="1" max="31" required
@@ -29,15 +29,15 @@
                 value="<?php if (isset($numero)) {echo $numero;} ?>">
             <div class="bloc_taille">
                 <div class="form-element">
-                    <input type="checkbox" name="Snap" value="Snap" id="Snap">
-                    <label for="Snap">
+                    <input type="checkbox" name="snap" value="snap" id="snap">
+                    <label for="snap">
                         <div class="title">Filtre Snap</div>
                     </label>
                 </div>
 
                 <div class="form-element">
-                    <input type="checkbox" name="SMS" value="SMS" id="SMS">
-                   <label for="SMS">
+                    <input type="checkbox" name="sms" value="sms" id="sms">
+                   <label for="sms">
                         <div class="title">SMS invite</div>
                     </label>
                 </div> 
