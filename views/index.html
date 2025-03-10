@@ -14,3 +14,21 @@
         </label>
     </div>
 </div>
+
+<h5>Numéro</h5>
+<input class="form_input" type="number" placeholder="Numéro" name="numero" value="<?php if (isset($numero)) {echo $numero;} ?>">
+<div class="bloc_taille">
+    <div class="form-element">
+        <input type="checkbox" name="snap" value="snap" id="snap">
+        <label for="snap">
+            <div class="title">Filtre Snap</div>
+        </label>
+    </div>
+
+    <div class="form-element">
+        <input type="checkbox" name="sms" value="sms" id="sms">
+        <label for="sms">
+            <div class="title">SMS invite</div>
+        </label>
+    </div>
+</div>
