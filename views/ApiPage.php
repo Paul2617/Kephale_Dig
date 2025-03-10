@@ -1,4 +1,7 @@
+
 <div class='blocAcceul'>
+<a href="" class='linklink'>liste api</a>
+
     <section class='BlocBac'>
         <form method="POST" enctype="multipart/form-data">
             <h1 class='eooez'>Ajouter api</h1>
@@ -26,14 +29,14 @@
                 </select>
                 <div class="bloc_taille">
     <div class="form-element">
-        <input type="checkbox" name="options[]" value="mariage" id="mariage">
+        <input type="checkbox" name="options" value="mariage" id="mariage">
         <label for="mariage">
             <div class="title">Mariage</div>
         </label>
     </div>
 
     <div class="form-element">
-        <input type="checkbox" name="options[]" value="profesionel" id="profesionel">
+        <input type="checkbox" name="options" value="profesionel" id="profesionel">
         <label for="profesionel">
             <div class="title">Profesionel</div>
         </label>

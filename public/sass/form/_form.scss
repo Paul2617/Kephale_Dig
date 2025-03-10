@@ -2,8 +2,21 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.linklink {
+    width: 50%;
+    height: 60px;
+    background-color: #1d72b86b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    color: #000000;
 }
 
 .BlocBac {

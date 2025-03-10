@@ -11,8 +11,7 @@ if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
                 $date_m = "$jour-$mois-$anne";
                 $date_fin = strtotime($date_m); 
                 $date_debut = time();
-
-
+                
             }else{
  $erreur = 'Veuillez entre le type';
             }
@@ -26,8 +25,8 @@ if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
 }
 if(isset($date_fin)){
     require_once ("../models/bd/generateApiKey.php");
-    $apiKey = generateApiKey(12);
-    $inserCleApi = inserCleApi($bd, $date_debut, $type, $apiKey, $sms, $snap );
+     $apiKey = generateApiKey(12);
+    $inserCleApi = inserCleApi($bd, $date_debut, $type, $apiKey, $date_fin );
     if($inserCleApi === 1){
         $resuite = 'Api Enregistre.';
         sleep(3);
