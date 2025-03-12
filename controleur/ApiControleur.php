@@ -37,6 +37,4 @@ if(isset($date_fin)){
         $erreur = 'api nom envoyer';
     }
 }
-require_once ($views);
-
 ?>

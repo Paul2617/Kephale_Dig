@@ -24,9 +24,10 @@ class Routeur
                 }
                 if(file_exists($controleur)){
                     require_once ($controleur);
+                    require_once ($views);
 
                 }else{
-                    header ('Location: /Kephale_Dig/mariage');
+                    header ('Location: /Kephale_Dig/');
                 }
 
              }else{
