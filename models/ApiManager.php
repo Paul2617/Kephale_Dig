@@ -1,6 +1,4 @@
 <?php
-require_once ("../models/bd/model.php");
-
 function inserCleApi($bd, $date_debut, $type, $apiKey, $date_fin ){
    $recTable = rowCount ( $bd, "api", "api", $apiKey);
    if($recTable === 0){

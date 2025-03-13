@@ -141,6 +141,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 200px;
+}
+
+.blkeplus {
+  margin-top: 50px;
 }
 
 .linklink {
@@ -175,6 +180,13 @@ body {
 .BlocBac form h5 {
   font-weight: 500;
   margin-bottom: 5px;
+}
+.BlocBac form .rrmrmrr {
+  display: flex;
+  justify-content: space-between;
+}
+.BlocBac form .rrmrmrr .form_input {
+  width: 45%;
 }
 .BlocBac form .erreur {
   width: 100%;
@@ -349,6 +361,12 @@ body {
   border-radius: 13px;
 }
 
+.fffc {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .bloclisteapi {
   width: 100%;
   display: flex;
@@ -364,6 +382,8 @@ body {
   margin-bottom: 10px;
   color: rgb(36, 36, 36);
   padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .bloclisteapi .cdkdirje h1 {
   margin-left: 10px;
@@ -377,6 +397,33 @@ body {
 .bloclisteapi .cdkdirje p {
   margin-left: 10px;
   font-size: 9px;
+}
+.bloclisteapi .cdkdirje .ffiefyei {
+  width: 60%;
+  height: 100%;
+}
+.bloclisteapi .cdkdirje .ffjddfj {
+  margin-top: 10px;
+  width: 30%;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bloclisteapi .cdkdirje .ffjddfj a {
+  margin: 3px;
+  padding: 7px;
+  background-color: rgba(29, 114, 184, 0.324);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-radius: 13px;
+}
+.bloclisteapi .cdkdirje .ffjddfj .djdjj {
+  background-color: rgb(237, 34, 28);
+  color: rgb(255, 255, 255);
 }
 
 /*# sourceMappingURL=style.css.map */

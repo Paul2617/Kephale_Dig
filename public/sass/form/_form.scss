@@ -5,6 +5,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 200px;
+}
+
+.blkeplus {
+    margin-top: 50px;
 }
 
 .linklink {
@@ -37,6 +42,13 @@
         h5 {
             font-weight: 500;
             margin-bottom: 5px;
+        }
+        .rrmrmrr {
+            display: flex;
+            justify-content: space-between;
+            .form_input {
+                width: 45%;
+            }
         }
         .erreur {
             width: 100%;

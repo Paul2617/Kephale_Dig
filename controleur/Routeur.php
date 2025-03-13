@@ -20,6 +20,8 @@ class Routeur
                     require_once ("../models/bd/Cntbd.php");
                     $Cntbd = new Cntbd();
                     $bd = $Cntbd->bd();
+                    require_once ("../models/bd/model.php");
+                    require_once ("../models/bd/affiche_date.php");
                     require_once ($models);
                 }
                 if(file_exists($controleur)){

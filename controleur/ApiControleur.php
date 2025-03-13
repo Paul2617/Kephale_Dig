@@ -1,32 +1,33 @@
 <?php
 if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
-    if (isset($_POST["jour"]) and !empty($_POST["jour"])){
-        $jour = htmlspecialchars($_POST["jour"]);
-        if (isset($_POST["mois"]) and !empty($_POST["mois"])){
-            $mois = htmlspecialchars($_POST["mois"]);
-            if (isset($_POST["options"]) and !empty($_POST["options"])){
-                $type = htmlspecialchars($_POST["options"]);
-                $timestamp = time();
-                $anne = date('Y', $timestamp);
-                $date_m = "$jour-$mois-$anne";
-                $date_fin = strtotime($date_m); 
-                $date_debut = time();
-                
-            }else{
- $erreur = 'Veuillez entre le type';
-            }
-       
-        }else{
-            $erreur = 'Veuillez le mois';
-        }
+$jour = isset($_POST['jour']) ? $_POST['jour'] : null;
+$mois = isset($_POST['mois']) ? $_POST['mois'] : null;
+$timestamp = time();
+$annee = date('Y', $timestamp);
+$heure = isset($_POST['heure']) ? $_POST['heure'] : null;
+$minute = isset($_POST['minute']) ? $_POST['minute'] : null;
+if ($jour && $mois && $annee && $heure !== null && $minute !== null) {
+     // Créer une chaîne de caractères de la date au format 'Y-m-d H:i'
+     $dateStr = sprintf('%04d-%02d-%02d %02d:%02d', $annee, $mois, $jour, $heure, $minute);
+     // Convertir la date en timestamp Unix avec la fonction strtotime()
+     $timestamp = strtotime($dateStr);
+
+     if (isset($_POST["options"]) and !empty($_POST["options"])){
+        $type = htmlspecialchars($_POST["options"]);
+        $date_debut = time();
+        
     }else{
-        $erreur = 'Veuillez le jours';
+      $erreur = 'Veuillez entre le type';
     }
+}else{
+    $erreur = 'Veuillez renplire tous les chans';
 }
-if(isset($date_fin)){
+}
+
+if(isset($timestamp)){
     require_once ("../models/bd/generateApiKey.php");
      $apiKey = generateApiKey(12);
-    $inserCleApi = inserCleApi($bd, $date_debut, $type, $apiKey, $date_fin );
+    $inserCleApi = inserCleApi($bd, $date_debut, $type, $apiKey, $timestamp );
     if($inserCleApi === 1){
         $resuite = 'Api Enregistre.';
         sleep(3);

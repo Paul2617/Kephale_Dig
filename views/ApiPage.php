@@ -1,6 +1,12 @@
 
-<div class='blocAcceul'>
-<a href="/Kephale_Dig/listeapi" class='linklink'>liste api</a>
+<section class="ddhdxjxh">
+    <section class='fffc'>
+        <a href="/Kephale_Dig/user"><</a>
+        <a href="/Kephale_Dig/listeapi">liste api</a>
+    </section>
+</section>
+
+<div class='blocAcceul blkeplus'>
 
     <section class='BlocBac'>
         <form method="POST" enctype="multipart/form-data">
@@ -27,16 +33,27 @@
                     <option value="11">Novembre</option>
                     <option value="12">Décembre</option>
                 </select>
+
+<section class='rrmrmrr'>
+<input class="form_input" type="number" placeholder="Heure" name="heure" 
+            min="1" max="23" required
+                value="<?php if (isset($heure)) {echo $heure;} ?>">
+                <input class="form_input" type="number" placeholder="Minute" name="minute" 
+            min="0" max="59" required
+                value="<?php if (isset($minute)) {echo $minute;} ?>">
+</section>
+            
+
                 <div class="bloc_taille">
     <div class="form-element">
-        <input type="checkbox" name="options" value="mariage" id="mariage">
+        <input type="checkbox" name="options" value="Mariage" id="mariage">
         <label for="mariage">
             <div class="title">Mariage</div>
         </label>
     </div>
 
     <div class="form-element">
-        <input type="checkbox" name="options" value="profesionel" id="profesionel">
+        <input type="checkbox" name="options" value="Professionnel" id="profesionel">
         <label for="profesionel">
             <div class="title">Profesionel</div>
         </label>
