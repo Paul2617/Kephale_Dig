@@ -230,6 +230,39 @@ body {
 .BlocBac form .link {
   color: #95C11F;
 }
+.BlocBac form .blocfil {
+  width: 100%;
+  height: 50px;
+  background-color: #ced2c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  margin-bottom: 10px;
+}
+.BlocBac form .blocfil h4 {
+  width: 200px;
+  font-weight: 700;
+  color: #95C11F;
+}
+.BlocBac form .blocfil input[type=file] {
+  display: none;
+}
+.BlocBac form .blocfil label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  border-radius: 7px;
+}
+.BlocBac form .blocfil label img {
+  margin-right: 5px;
+  width: 50px;
+}
 
 .bloc_taille {
   width: 90%;
@@ -377,7 +410,7 @@ body {
 .bloclisteapi .cdkdirje {
   width: 90%;
   height: auto;
-  background-color: rgba(29, 114, 184, 0.137254902);
+  background-color: rgba(81, 81, 81, 0.071);
   border-radius: 13px;
   margin-bottom: 10px;
   color: rgb(36, 36, 36);
@@ -424,6 +457,17 @@ body {
 .bloclisteapi .cdkdirje .ffjddfj .djdjj {
   background-color: rgb(237, 34, 28);
   color: rgb(255, 255, 255);
+  border: none;
+  padding: 7px;
+  border-radius: 13px;
+}
+.bloclisteapi .cdkdirje .ffjddfj .djdjjrfhgd {
+  background-color: rgba(29, 114, 184, 0.699);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 7px;
+  border-radius: 13px;
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

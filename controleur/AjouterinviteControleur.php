@@ -1,0 +1,32 @@
+<?php
+ $api = $_GET['api'];
+ if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
+    $nom = isset($_POST['nom']) ? $_POST['nom'] : null;
+    $numeraux = isset($_POST['numeraux']) ? $_POST['numeraux'] : null;
+    if ($nom && $numeraux !== null ){
+        $type = 'ok';
+    }else{
+        $erreur = 'Veuillez renplire tous les chans';
+    }
+}
+if(isset($type)){
+    require_once ("../models/bd/verifierOperateur.php");
+    $Operateur = verifierOperateur($numeraux);
+    if($Operateur === 1){
+        $erreur = 'Opérateur inconnu';
+    }elseif($Operateur === 2) {
+        $erreur = 'Numéro invalideu';
+    }else{
+       $ajouteinvite = ajouteinvite($bd, $api, $nom, $numeraux);
+       if($ajouteinvite === 1){
+        $resuite = 'Invite Enregistre.';
+        sleep(5);
+        header("Location: /Kephale_Dig/ajouterinvite?api=". $api);
+        exit; 
+       }elseif($ajouteinvite === 2){
+        $erreur = 'Le numero egsiste deja';
+       }
+    }
+}
+
+?>

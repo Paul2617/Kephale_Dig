@@ -21,6 +21,26 @@ function recRowCount($bd, $table, $colone, $id){
     $rec->closeCursor();
   }
 
+  function recRowCountInvite ($bd, $table, $colone, $numeraux, $api){
+    $rec = $bd->prepare("SELECT * FROM invit WHERE numero = ? AND api LIKE '$api' ");
+    $rec->execute(array($numeraux));
+    return $rec->rowCount();
+    $rec->closeCursor();
+  }
+// la liste des invite nom suprime
+  function recListeInvite ($bd, $api){
+    $rec = $bd->prepare("SELECT * FROM invit WHERE api = ? AND etat LIKE 1 ORDER BY id DESC");
+    $rec->execute(array($api));
+    return $rec->fetchAll();
+    $rec->closeCursor();
+  }
+// verifie si SMS a ete envoye
+  function recRowCountSms ($bd, $id_client, $apiRec){
+    $rec = $bd->prepare("SELECT * FROM sms WHERE id_client = ? AND api LIKE '$apiRec' ");
+    $rec->execute(array($id_client));
+    return $rec->rowCount();
+    $rec->closeCursor();
+  }
 
   function listeapirest ($bd) {
     $rec =  $bd->prepare('SELECT * FROM api WHERE etat LIKE 1 ');
