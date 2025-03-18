@@ -22,7 +22,7 @@ if(isset($type)){
     if($Operateur === 1){
         $erreur = 'Opérateur inconnu';
     }elseif($Operateur === 2) {
-        $erreur = 'Numéro invalideu';
+        $erreur = 'Numéro invalide';
     }else{
         $inserClient = inserClient($bd, $nom, $numeraux, $evenement, $stricture, $type, $api, $Operateur );
 

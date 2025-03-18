@@ -7,9 +7,11 @@ function verifierOperateur($numero) {
     // Vérifier si le numéro est valide (commence par 7, 6 et a 8 chiffres)
     if (strlen($numero) === 8) {
         // Vérification pour Orange Mali
-        $orangePrefix = ['70', '71', '72', '75', '76', '94'];
+        $orangePrefix = ['70', '71', '72', '75', '76', '94','78'];
         // Vérification pour Malitel
         $malitelPrefix = ['66', '67', '68', '69'];
+
+        $telecelPrefix = ['50', '51', '52', '53'];
 
         // Vérifier l'opérateur basé sur les préfixes
         foreach ($orangePrefix as $prefix) {
@@ -21,6 +23,12 @@ function verifierOperateur($numero) {
         foreach ($malitelPrefix as $prefix) {
             if (substr($numero, 0, 2) === $prefix) {
                 return 'Malitel';
+            }
+        }
+
+        foreach ($telecelPrefix as $prefix) {
+            if (substr($numero, 0, 2) === $prefix) {
+                return 'Telecel';
             }
         }
 

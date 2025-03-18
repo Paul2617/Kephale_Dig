@@ -1,7 +1,7 @@
 <section class="ddhdxjxh">
     <section class='fffc'>
         <a href="/Kephale_Dig/ajouterclient?api=<?= $_GET["api"]?>"><</a>
-        <a href="/Kephale_Dig/ajouterinvitations?api=<?= $_GET["api"]?>">Invitation</a>
+        <a href="/Kephale_Dig/invitation?api=<?= $_GET["api"]?>&id=1">Invitation</a>
     </section>
 </section>
 

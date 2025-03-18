@@ -16,7 +16,17 @@ if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
         $erreur = 'Veuillez renplire tous les chans';
     }
 }
+if (isset($_POST["envoyers"]) and !empty($_POST["envoyers"])){
+    $fistre_snaps = isset($_POST['fistre_snaps']) ? $_POST['fistre_snaps'] : null;
+    $localisation = isset($_POST['localisation']) ? $_POST['localisation'] : null;
 
+    if($fistre_snaps !== null ){
+        enregiste_fistre_snaps ($bd, $api, $fistre_snaps);
+    }
+    if($localisation !== null ){
+        enregiste_localisation ($bd, $api, $localisation);
+    }
+}
 if(isset($valide)){
 $ajoutService = ajoutService ($bd, $api, $invite, $sms_mercis, $filtr_snaps, $localisationss);
 if($ajoutService === true){
@@ -26,5 +36,42 @@ if($ajoutService === true){
 $veifService = veifService ($bd, $api);
 if($veifService === 1){
     $recService = recService ($bd, $api);
+   function sms_merci($recServices){
+    if($recServices === "1"){
+        return 'Oui';
+    }else{
+        return 'Non';
+    }
+    
+   }
+
+   function fistre_snap ($bd, $api, $recServices){
+
+    if($recServices === "1"){
+        $info_fistre_snapRowCount = info_fistre_snapRowCount($bd,$api);
+        if($info_fistre_snapRowCount === 1){
+            return 'Oui';
+        }else{
+            return 'Pas enregistre';
+        }
+    }else{
+        return 'Non';
+    }
+   }
+
+   function localisations($bd, $api, $recServices){
+
+    if($recServices === "1"){
+        $info_localiRowCount = info_localiRowCount($bd,$api);
+        if($info_localiRowCount === 1){
+            return 'Oui';
+        }else{
+            return 'Pas enregistre';
+        }
+    }else{
+        return 'Non';
+    }
+    
+   }
 }
 ?>

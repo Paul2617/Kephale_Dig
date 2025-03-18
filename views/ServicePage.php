@@ -125,17 +125,41 @@ if($veifService === 0){
 }else{
    
     foreach( $recService as  $recServices){
+        $sms_merci = sms_merci($recServices["sms_merci"]);
+        $fistre_snap = fistre_snap($bd, $api, $recServices["fistre_snap"]);
+        $localisations = localisations($bd, $api, $recServices["localisations"]);
         ?>
         <div class='blocAcceul'>
         <section class='BlocBac'>
             <form  method="POST" enctype="multipart/form-data">
             <h1 class='eooez'>Service</h1>          
         <h5>Nombre d'invite (<?= $recServices["invite"]?>) </h5>
-
-        <h5>Localisations</h5>
-        <input class='form_input' type='text' placeholder='Mon' name='nom' min='1' max='31' required
-                value='<?php if (isset($nom)) {echo $nom;} ?>'>
-        <input class='boutton_inpute' class='submit' type='submit' value='Envoyer" name="envoyer">
+        <h5>SMS de remerciement <?= $sms_merci ?> </h5>
+        <h5>Filtre Snaps <?= $fistre_snap ?> </h5>
+        <h5>Localisations <?= $localisations?> </h5>
+        <?php
+        if($fistre_snap === 'Pas enregistre'){
+            ?><input class='form_input' type='text' placeholder='Lien Snap' name='fistre_snaps' required
+                value='<?php if (isset($fistre_snaps)) {echo $fistre_snaps;} ?>'>
+            <?php
+        }
+        if($localisations === 'Pas enregistre'){
+            ?><input class='form_input' type='text' placeholder='Lien localisation' name='localisation' required
+            value='<?php if (isset($localisation)) {echo $localisation;} ?>'>
+            <?php
+        }
+        if($localisations === 'Pas enregistre'){
+            ?>
+            <input class='boutton_inpute' class='submit' type='submit' value='Envoyer' name='envoyers'>
+            <?php
+        }elseif($fistre_snap === 'Pas enregistre'){
+            ?>
+            <input class='boutton_inpute' class='submit' type='submit' value='Envoyer' name='envoyers'>
+            <?php
+        }
+        ?>
+        
+        
             </form>
         </section>
     </div>
