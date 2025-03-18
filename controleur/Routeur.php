@@ -29,7 +29,7 @@ class Routeur
                     require_once ($views);
 
                 }else{
-                    header ('Location: /Kephale_Dig/');
+                    header ('Location: /Kephale_Dig/user');
                 }
 
              }else{
