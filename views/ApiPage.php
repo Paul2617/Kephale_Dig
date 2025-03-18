@@ -2,7 +2,7 @@
 <section class="ddhdxjxh">
     <section class='fffc'>
         <a href="/Kephale_Dig/user"><</a>
-        <a href="/Kephale_Dig/listeapi">liste api</a>
+        <a href="/Kephale_Dig/listeapi">liste événement</a>
     </section>
 </section>
 
@@ -10,7 +10,7 @@
 
     <section class='BlocBac'>
         <form method="POST" enctype="multipart/form-data">
-            <h1 class='eooez'>Ajouter api</h1>
+            <h1 class='eooez'>Ajouter événement</h1>
             <h1 class='eoo'><?php if (isset($resuite)) {echo $resuite;} ?></h1>
             <h5>Jour</h5>
             <input class="form_input" type="number" placeholder="Jour" name="jour" 
@@ -46,16 +46,16 @@
 
                 <div class="bloc_taille">
     <div class="form-element">
-        <input type="checkbox" name="options" value="Mariage" id="mariage">
+        <input type="radio" name="options" value="Mariage" id="mariage">
         <label for="mariage">
             <div class="title">Mariage</div>
         </label>
     </div>
 
     <div class="form-element">
-        <input type="checkbox" name="options" value="Professionnel" id="profesionel">
-        <label for="profesionel">
-            <div class="title">Profesionel</div>
+        <input type="radio" name="options" value="Professionnel" id="Professionnel">
+        <label for="Professionnel">
+            <div class="title">Professionnel</div>
         </label>
     </div>
 </div>

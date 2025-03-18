@@ -13,7 +13,7 @@
 <div class="bloclisteapi">
 <?php
 if(empty($listeClient)){
-    echo 'Pas de client enregistre';
+    echo 'Pas de client enregistré';
 }else{
     foreach($listeClient as $listeClients){
         ?> 
@@ -30,11 +30,11 @@ if(empty($listeClient)){
 }
 ?>   
 
-<h1 class="fjdjkfj">liste Invite</h1>
+<h1 class="fjdjkfj">liste d'invités</h1>
 
 <?php
 if(empty($listeinvite)){
-    echo 'Pas de numerau';
+    echo "Pas de d'invite";
 }else{
     foreach($listeinvite as $listeinvites){
         $presense = $listeinvites['presense'];
