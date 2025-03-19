@@ -1,15 +1,24 @@
-<div class='blockinfitaions'>
+
+  <div class='blockinfitaions'>
     <section class='blocImg'>
-        <img src="public/asset/img_invitations/8B2A3173_250313_221509.JPG" alt="">
+        <img src="public/asset/img_invitations/carte.png" alt="">
     </section>
-    <section class='blockInfo'>
+
+    <?php 
+if(isset($id_user)){
+  ?>
+   <section class='blockInfo'>
       <section class='blockTexts'>
-        <h1>Invitaions de Mariage</h1>
-        <h2>Coucou Aboul Diarra</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat alias error, accusantium unde temporibus amet. Id necessitatibus adipisci, totam quod, maxime suscipit deleniti fuga nemo, iste ea reiciendis est perferendis.</p>
+        <h1><?= $Invitaions ?></h1>
+        <h2>Bonjour <?= $Nom_invite  ?></h2>
+        <p><?= $Nom_invite  ?></p>
       </section>
       <form method="POST" enctype="multipart/form-data">
       <input class="boutton_inpute" class="submit" type="submit" value="Confirme votre presense" name="confirme">
       </form>
     </section>
+  <?php 
+}
+?>
+ 
 </div>
