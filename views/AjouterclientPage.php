@@ -21,19 +21,19 @@
             <input class="form_input" type="text" placeholder="Evenement" name="evenement" min="1" max="31" required
                 value="<?php if (isset($evenement)) {echo $evenement;} ?>">
                 <h5>Stricture</h5>
-            <input class="form_input" type="text" placeholder="Stricture" name="stricture" min="1" max="100" required
+            <input class="form_input" type="text" placeholder="Stricture" name="stricture"
                 value="<?php if (isset($stricture)) {echo $stricture;} ?>">
 
             <div class="bloc_taille">
                 <div class="form-element">
-                    <input type="checkbox" name="options" value="Homme" id="Homme">
+                    <input type="radio" name="options" value="Homme" id="Homme">
                     <label for="Homme">
                         <div class="title">Homme</div>
                     </label>
                 </div>
 
                 <div class="form-element">
-                    <input type="checkbox" name="options" value="Femme" id="Femme">
+                    <input type="radio" name="options" value="Femme" id="Femme">
                     <label for="Femme">
                         <div class="title">Femme</div>
                     </label>

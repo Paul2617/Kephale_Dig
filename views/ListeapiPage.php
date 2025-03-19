@@ -20,11 +20,9 @@ foreach ($listapi as $listapis){
     $dateevent = $listapis["date_fin"];
     $date_converty = date_converty ($dateevent);
     ?>
-
         <a href="/Kephale_Dig/infoapi?api=<?= $listapis["api"]?>" class="cdkdirje">
             <section class='ffiefyei'>
-                <h1>Événement <?= $listapis["types"]?></h1>
-                <h3><?= $listapis["types"]?></h3>
+                <h1><?= $listapis["types"]?></h1>
                 <p>Évènement, prévu</p>
                 <p><?= $date_converty?></p>
             </section>

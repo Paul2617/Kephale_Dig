@@ -4,8 +4,7 @@ if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
 $nom = isset($_POST['nom']) ? $_POST['nom'] : null;
 $numeraux = isset($_POST['numeraux']) ? $_POST['numeraux'] : null;
 $evenement = isset($_POST['evenement']) ? $_POST['evenement'] : null;
-$stricture = isset($_POST['stricture']) ? $_POST['stricture'] : null;
-if ($nom && $numeraux && $evenement && $stricture !== null ){
+if ($nom && $numeraux && $evenement !== null ){
     if (isset($_POST["options"]) and !empty($_POST["options"])){
         $type = htmlspecialchars($_POST["options"]);
     }else{
@@ -15,7 +14,11 @@ if ($nom && $numeraux && $evenement && $stricture !== null ){
     $erreur = 'Veuillez renplire tous les chans';
 }
 }
-
+if(isset($stricture) and !empty($stricture)){
+    $stricture = isset($_POST['stricture']) ? $_POST['stricture'] : null;
+}else{
+    $stricture = 'null';
+}
 if(isset($type)){
     require_once ("../models/bd/verifierOperateur.php");
     $Operateur = verifierOperateur($numeraux);

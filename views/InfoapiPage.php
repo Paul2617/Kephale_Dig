@@ -20,7 +20,7 @@ if(empty($listeClient)){
         <section class="cdkdirje">
         <section class='ffiefyei'>
         <h1><?= $listeClients['info']?> </h1>
-        <h3><?= $listeClients['stricture']?></h3>
+        <h3><?= $listeClients['type_event']?></h3>
         <p>Tel: <?= $listeClients['numero']?> <?= $listeClients['operateur']?></p>
         </section>
         </section>
@@ -42,6 +42,9 @@ if(empty($listeinvite)){
         $apiRec = $listeinvites['api'];
         $verifconfirme = verifconfirme($presense);
         $verifsms = verifsmsAd($bd, $id_client, $apiRec);
+        if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
+           echo envois_sms ($bd, $id_client, $apiRec);
+          }
         ?> 
         <section class="cdkdirje">
     <section class='ffiefyei'>

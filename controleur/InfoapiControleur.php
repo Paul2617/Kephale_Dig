@@ -13,7 +13,8 @@ function verifconfirme($presense){
 return $texte;
 }
 if (isset($_POST["envoyer"]) and !empty($_POST["envoyer"])){
-  require_once ("../models/infoBip.php");
+
+  require_once ("../models/sms.php");
 }
 // verifie si sms  a ete envoy ou pas
 function verifsmsAd ($bd, $id_client, $apiRec){
