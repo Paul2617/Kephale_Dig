@@ -1,12 +1,25 @@
 <?php
 function ajoutService ($bd, $api, $invite, $sms_mercis, $filtr_snaps, $localisationss){
-    $inser = $bd->prepare("INSERT INTO service ( api, invite, sms_merci, fistre_snap, localisations ) VALUES (?,?,?,?,?)");
-    $inser->execute(array($api, $invite, $sms_mercis, $filtr_snaps, $localisationss ));
+    $inser = $bd->prepare("UPDATE service SET  invite = '$invite' , sms_merci = '$sms_mercis', fistre_snap = '$filtr_snaps', localisations = '$localisationss' WHERE api = ? ");
+    $inser->execute(array($api));
     return true ;
 }
-function veifService ($bd, $api) {
+function verifService ($bd, $api) {
     return recRowCount($bd, 'service', 'api', $api);
  }
+
+ function etat_sms ($bd, $api) {
+  $rec =  $bd->prepare('SELECT invite FROM service WHERE api = ?');
+ $rec->execute(array($api));
+ $resulte = $rec->rowCount();
+ if($resulte === 1){
+    $resultes = $rec->fetch(PDO::FETCH_ASSOC);
+    $invite = $resultes["invite"];
+    return  $invite ;
+    $rec->closeCursor();
+ }
+}
+
 
  function recService ($bd, $api){
     return recTableIdBoucle ($bd, 'service', 'api', $api);

@@ -1,6 +1,6 @@
-<section class="ddhdxjxh">
-    <section class='fffc'>
-        <a href=""><</a>
+<section class="nav_bar">
+    <section class='bloc_nav'>
+        <a class='botton_link' href=""><</a>
     </section>
 </section>
 <div class='bloc_center' >
@@ -35,7 +35,6 @@
             </div>
         <input class="bouton" class="submit" type="submit" value="Envoyer" name="envoyer">
         <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
-        <?php if (isset($apiKey)){echo $apiKey ;} ?>
         
         </form>
     </section>

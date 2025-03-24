@@ -9,7 +9,20 @@
         $erreur = 'Veuillez renplire tous les chans';
     }
 }
+
+$info_invite = info_invite($bd, $api);
+$info_nombre_invite = info_nombre_invite($bd, $api);
+if($info_invite === 'null'){
+
+    $contact_restant = '0';
+}else{
+    $contact_restant = $info_invite - $info_nombre_invite ;
+
+}
 if(isset($type)){
+
+    if($info_invite !== 'null'){
+
     require_once ("../models/bd/verifierOperateur.php");
     $Operateur = verifierOperateur($numeraux);
     if($Operateur === 1){
@@ -17,16 +30,25 @@ if(isset($type)){
     }elseif($Operateur === 2) {
         $erreur = 'Numéro invalideu';
     }else{
-       $ajouteinvite = ajouteinvite($bd, $api, $nom, $numeraux);
-       if($ajouteinvite === 1){
-        $resuite = 'Invite Enregistre.';
-        sleep(5);
-        header("Location: /Kephale_Dig/ajouterinvite?api=". $api);
+        if($info_invite === $info_nombre_invite){
+            $erreur = 'Nombre de contacts atteints';
+        }else{
+            $ajouteinvite = ajouteinvite($bd, $api, $nom, $numeraux);
+        }
+       if($ajouteinvite === true){
+        $resuite = 'Contacte enregistre.';
+        //sleep(3);
+        header ("Refresh: 2");
+        //header("Location: /Kephale_Dig/ajouterinvite?api=". $api);
         exit; 
        }elseif($ajouteinvite === 2){
         $erreur = 'Le numero egsiste deja';
        }
     }
+}else{
+    $erreur = 'Compte inactif';
+}
+
 }
 
 ?>

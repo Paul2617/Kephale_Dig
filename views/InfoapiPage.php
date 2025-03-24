@@ -1,8 +1,9 @@
-<section class="ddhdxjxh">
-    <section class='fffc'>
-    <a href="/Kephale_Dig/listeapi"><</a>
-    <a href="/Kephale_Dig/ajouterclient?api=<?= $_GET["api"]?>">Ajouter Client</a>
-    <a href="/Kephale_Dig/ajouterinvite?api=<?= $_GET["api"]?>">Ajouter Invite</a>
+<section class="nav_bar">
+    <section class='bloc_nav'>
+    <a class='botton_link'  href="/Kephale_Dig/listeapi"><</a>
+    <a class='botton_link'  href="/Kephale_Dig/service?api=<?= $_GET["api"]?>">Service</a>
+    <a class='botton_link'  href="/Kephale_Dig/ajouterinvitations?api=<?= $_GET["api"]?>">Carte</a>
+    <a class='botton_link'  href="/Kephale_Dig/ajouterinvite?api=<?= $_GET["api"]?>">Ajouter Invite</a>
     </section>
 </section>
 
@@ -12,20 +13,26 @@
 
 <div class="bloclisteapi">
 <?php
+
 if(empty($listeClient)){
     echo 'Pas de client enregistré';
 }else{
-    foreach($listeClient as $listeClients){
+        if($verifitype === 'Mariage'){
+            $info = "Mariage";
+            $text = $listeClient["nom_marie"]." et ".$listeClient["nom_mariee"];
+            }else{
+                $info = $listeClient["type_eve"];
+                $text = $listeClient["nom"];
+            }
         ?> 
         <section class="cdkdirje">
         <section class='ffiefyei'>
-        <h1><?= $listeClients['info']?> </h1>
-        <h3><?= $listeClients['type_event']?></h3>
-        <p>Tel: <?= $listeClients['numero']?> <?= $listeClients['operateur']?></p>
+        <h1><?= $info ?> </h1>
+        <h3>De <?= $text ?></h3>
+        <p>Tel: <?= $rec_numero ?></p>
         </section>
         </section>
         <?php
-    }
    
 }
 ?>   
@@ -54,7 +61,7 @@ if(empty($listeinvite)){
     </section>
     <form class='ffjddfj' method="POST" enctype="multipart/form-data">
     <?= $verifsms?>
-    <input class="djdjj" class="submit" type="submit" value="Supprime" name="supprime">
+    <input class="djdjj" class="submit" type="submit" value="Supprime" name="supprime"> 
     </form>
     </section>
         <?php

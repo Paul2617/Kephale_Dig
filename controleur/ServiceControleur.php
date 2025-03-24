@@ -33,7 +33,9 @@ if($ajoutService === true){
     header ('Location: /Kephale_Dig/service?api='.$api );
 }
 }
-$veifService = veifService ($bd, $api);
+$veifService = verifService ($bd, $api);
+$etat_sms = etat_sms ($bd, $api);
+
 if($veifService === 1){
     $recService = recService ($bd, $api);
    function sms_merci($recServices){

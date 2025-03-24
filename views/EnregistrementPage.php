@@ -3,9 +3,11 @@
         <a href=""><</a>
     </section>
 </section>
-<?php 
 
-if($options = 'Personnelle'){
+<?php 
+if($options === 'Personnelle'){
     require_once ("../views/page/personnelle.php");
+}else{
+    echo $options ;
 }
 ?>

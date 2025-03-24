@@ -36,6 +36,6 @@
         $annee = date('Y', $date);
         $heur_ = floor(($date % (24 * 3600)) / 3600);
         $minute_ = floor(($date % 3600) / 60);
-        $dates = $joures .' / '. $joure_chiffre .' / '. $mois.' / '.$annee. " à ". $heur_." : ".$minute_;
+        $dates = $joures .'  '. $joure_chiffre .'  '. $mois.'  '.$annee. " à ". $heur_."h : ".$minute_;
         return $dates;
     };

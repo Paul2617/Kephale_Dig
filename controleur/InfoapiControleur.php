@@ -1,6 +1,12 @@
 <?php
 $api = $_GET['api'];
+//rec api 
+$rec_numero = rec_numero ($bd, $api);
+// liste de client
 $listeClient = listeClient ($bd, $api);
+// verifie la le type
+$verifitype = verifitype ($bd, $api);
+// Liste invite
 $listeinvite = listeInvite ($bd, $api);
 
 // verifie si linvitations a ete accept ou pas

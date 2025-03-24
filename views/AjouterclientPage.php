@@ -1,8 +1,8 @@
-<section class="ddhdxjxh">
-    <section class='fffc'>
-        <a href="/Kephale_Dig/infoapi?api=<?= $_GET["api"]?>"><</a>
-        <a href="/Kephale_Dig/service?api=<?= $_GET["api"]?>">Service</a>
-        <a href="/Kephale_Dig/ajouterinvitations?api=<?= $_GET["api"]?>">Ajouter invitation</a>
+<section class="nav_bar">
+    <section class='bloc_nav'>
+        <a class='botton_link' href="/Kephale_Dig/infoapi?api=<?= $_GET["api"]?>"><</a>
+        <a class='botton_link' href="/Kephale_Dig/service?api=<?= $_GET["api"]?>">Service</a>
+        <a class='botton_link' href="/Kephale_Dig/ajouterinvitations?api=<?= $_GET["api"]?>">Ajouter invitation</a>
     </section>
 </section>
 

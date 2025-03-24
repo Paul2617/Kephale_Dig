@@ -1,12 +1,13 @@
-<section class="ddhdxjxh">
-    <section class='fffc'>
-        <a href="/Kephale_Dig/ajouterclient?api=<?= $_GET["api"]?>"><</a>
+<section class="nav_bar">
+    <section class='bloc_nav'>
+        <a class='botton_link' href="/Kephale_Dig/infoapi?api=<?= $_GET["api"]?>"><</a>
+        
     </section>
 </section>
 
 
 <?php
-if($veifService === 0){
+if($etat_sms  === 'null'){
     ?>
     <div class='blocAcceul blkeplus'>
     <section class='BlocBac'>

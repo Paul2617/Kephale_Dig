@@ -1,7 +1,7 @@
-<section class="ddhdxjxh">
-    <section class='fffc'>
-    <a href="/Kephale_Dig/user"> < </a>
-    <a href="/Kephale_Dig/api">Ajouter événement</a>
+<section class="nav_bar">
+    <section class='bloc_nav'>
+    <a class='botton_link' href="/Kephale_Dig/user"> < </a>
+    <a class='botton_link' href="/Kephale_Dig/api">Ajouter événement</a>
     </section>
 </section>
 <div class="blockekf">
@@ -17,14 +17,20 @@ if(empty($listapi)){
     echo "Pas d'événement";
 }else{
 foreach ($listapi as $listapis){
-    $dateevent = $listapis["date_fin"];
-    $date_converty = date_converty ($dateevent);
+    $apirec = $listapis["api"];
+    $rec_service = rec_service($bd, $apirec);
+    $rec_client = rec_client($bd, $apirec, $rec_service);
+    $autre_service = autre_service($bd, $apirec);
+    $rec_date = rec_date($bd, $apirec, $rec_service);
+    $dates = dates ($rec_date) ;
     ?>
         <a href="/Kephale_Dig/infoapi?api=<?= $listapis["api"]?>" class="cdkdirje">
             <section class='ffiefyei'>
-                <h1><?= $listapis["types"]?></h1>
+                <h1><?php if($rec_service === "Mariage"){echo $rec_service ;}else{echo $autre_service;} ?></h1>
+                <p><?= $rec_client ?></p>
+                <p>Tel : <?= $listapis["numeros"] ?></p>
                 <p>Évènement, prévu</p>
-                <p><?= $date_converty?></p>
+                <p><?= $dates ?></p>
             </section>
 
         </a>

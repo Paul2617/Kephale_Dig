@@ -14,10 +14,16 @@ if(isset($valid)){
     require_once ("../models/bd/generateApiKey.php");
     $apiKey = generateApiKey($bd);
     if(isset($apiKey)){
-        $enregisteapi = enregistre_api ($bd, $apiKey, $numeros, $options);
-        if($enregisteapi === 1 ){
-            header ('Location: /Kephale_Dig/enregistrement&api='.$apiKey);
+        $verifi_numeros_associe = verifi_numeros_associe($bd, $numeros, $options);
+        if($verifi_numeros_associe === 0){
+            $enregisteapi = enregistre_api ($bd, $apiKey, $numeros, $options);
+            if($enregisteapi === 1 ){
+                header ('Location: /Kephale_Dig/enregistrement&api='.$apiKey);
+            }
+        }else{
+            $erreur = "Vous avez déjà un compte associé au type <br>( ".$options." )";
         }
+        
     }
 }
 ?>

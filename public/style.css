@@ -134,6 +134,22 @@ body {
     width: 560px;
   }
 }
+.bloc_nav {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_bar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+}
+
 .bloc_center {
   width: 100%;
   height: 100vh;
@@ -143,8 +159,18 @@ body {
   align-items: center;
 }
 
+.bloc_center_un {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .bloc_form {
-  width: 80%;
+  width: 85%;
   height: auto;
   background-color: #ffffff;
   padding: 10px;
@@ -197,6 +223,126 @@ body {
   margin-top: 7px;
 }
 
+.bloc_date {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_date {
+  width: 20%;
+  height: 55px;
+  border: none;
+  border: 1px solid #1D71B8;
+  border-radius: 13px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.plus {
+  width: 35%;
+}
+
+.block_link_deux {
+  width: 90%;
+  height: 300px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  border-radius: 13px;
+  box-shadow: 0px 0px 7px #dadada;
+  margin-bottom: 20px;
+}
+
+.block_link_troix {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block_links {
+  width: 45%;
+  height: 45%;
+  margin-bottom: 10px;
+  border-radius: 13px;
+  display: flex;
+  align-items: end;
+  padding-left: 10px;
+  background-color: #ffffff;
+  padding-bottom: 10px;
+}
+
+.bleu {
+  background-color: #1D71B8;
+  color: #ffffff;
+}
+
+.vert {
+  background-color: #95C11F;
+  color: #ffffff;
+}
+
+.orange {
+  background-color: #F7A429;
+  color: #ffffff;
+}
+
+.rouge {
+  background-color: #E94E1B;
+  color: #ffffff;
+}
+
+.blocks_Links {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.deconect {
+  width: auto;
+  padding: 8px;
+  border-radius: 13px;
+  background-color: #E94E1B;
+  color: #ffffff;
+}
+
+.espace_top {
+  margin-top: 20px;
+}
+
+.block_info {
+  width: 60%;
+  height: auto;
+  margin-bottom: 40px;
+  border: 1px solid #1D71B8;
+  padding: 10px;
+  border-radius: 13px;
+}
+.block_info p {
+  font-size: 12px;
+}
+.block_info .flfdm {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.block_info .flfffdm {
+  margin-top: 10px;
+  text-align: center;
+  color: #95C11F;
+}
+
 .bouton {
   width: 100%;
   height: 55px;
@@ -205,6 +351,14 @@ body {
   background-color: #1D71B8;
   color: #ffffff;
   font-size: 1.2em;
+}
+
+.botton_link {
+  width: auto;
+  padding: 8px;
+  background-color: rgb(241, 241, 241);
+  color: rgb(48, 48, 48);
+  border-radius: 13px;
 }
 
 .blocAcceul {
@@ -447,29 +601,6 @@ body {
   margin-bottom: 10px;
 }
 
-.ddhdxjxh {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  background-color: rgb(255, 255, 255);
-}
-.ddhdxjxh a {
-  width: auto;
-  padding: 8px;
-  background-color: rgb(241, 241, 241);
-  color: rgb(48, 48, 48);
-  border-radius: 13px;
-}
-
-.fffc {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
-
 .bloclisteapi {
   width: 100%;
   display: flex;
@@ -542,17 +673,17 @@ body {
 
 .blockinfitaions {
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 .blockinfitaions .blocImg {
   width: 100%;
-  height: 60%;
-  background-color: rgb(218, 16, 16);
-  border-radius: 0px 0px 20px 20px;
+  height: auto;
+  background-color: rgb(255, 255, 255);
 }
 .blockinfitaions .blocImg img {
   width: 100%;
@@ -576,16 +707,28 @@ body {
   width: 90%;
 }
 .blockinfitaions .blockInfo .blockTexts h1 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .blockinfitaions .blockInfo .blockTexts h2 {
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.blockinfitaions .blockInfo .blockTexts h2 span {
+  font-weight: 500;
+}
+.blockinfitaions .blockInfo .blockTexts h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
 }
 .blockinfitaions .blockInfo .blockTexts p {
-  font-size: 12px;
+  margin-top: 5px;
+  font-size: 13px;
+  text-align: center;
+  color: #95C11F;
 }
 .blockinfitaions .blockInfo form {
   width: 90%;
@@ -599,8 +742,9 @@ body {
   height: 50px;
   border: none;
   border-radius: 13px;
-  background-color: #1D71B8;
-  color: #ffffff;
+  background-color: #ffffff;
+  border: 1px solid #95C11F;
+  color: #95C11F;
   font-size: 17px;
   font-weight: 600;
 }
