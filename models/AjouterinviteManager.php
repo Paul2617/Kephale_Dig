@@ -1,6 +1,13 @@
 <?php
 
-function ajouteinvite ($bd, $api, $nom, $numeraux) {
+function ajouteinvite ($bd, $api, $nom, $numeraux, $Operateur) {
+    $rec = $bd->prepare("SELECT * FROM list_contacte WHERE tel = ? ");
+    $rec->execute(array($numeraux));
+    if($rec->rowCount() === 0){
+        $inser = $bd->prepare("INSERT INTO list_contacte ( nom, tel, operateur) VALUES (?,?,?)");
+        $inser->execute(array($nom, $numeraux, $Operateur));
+    }
+
     $recRowCountInvite = recRowCountInvite ($bd, 'invit', 'numero', $numeraux, $api);
 if( $recRowCountInvite === 0){
     $presense = "0";

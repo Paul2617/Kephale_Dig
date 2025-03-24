@@ -33,7 +33,7 @@ if(isset($type)){
         if($info_invite === $info_nombre_invite){
             $erreur = 'Nombre de contacts atteints';
         }else{
-            $ajouteinvite = ajouteinvite($bd, $api, $nom, $numeraux);
+            $ajouteinvite = ajouteinvite($bd, $api, $nom, $numeraux, $Operateur);
         }
        if($ajouteinvite === true){
         $resuite = 'Contacte enregistre.';
